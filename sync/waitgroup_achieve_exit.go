@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sync"
+	"time"
 )
 
 func worker(wg *sync.WaitGroup, cancel chan bool) {
@@ -12,6 +13,7 @@ func worker(wg *sync.WaitGroup, cancel chan bool) {
 		select {
 		default:
 			fmt.Println("hello")
+			time.Sleep(100 * time.Millisecond)
 		case <-cancel:
 			return
 		}

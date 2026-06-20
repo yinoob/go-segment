@@ -17,7 +17,7 @@ func write() {
 	// lock.Lock()   // 加互斥锁
 	rwlock.Lock() // 加写锁
 	x = x + 1
-	time.Sleep(10 * time.Millisecond) // 假设读操作耗时10毫秒
+	time.Sleep(10 * time.Millisecond) // 假设写操作耗时10毫秒
 	rwlock.Unlock()                   // 解写锁
 	// lock.Unlock()                     // 解互斥锁
 	wg.Done()
